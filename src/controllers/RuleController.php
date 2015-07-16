@@ -160,7 +160,7 @@ class RuleController extends Controller {
                         'model' => $this->findModel($name),
                     ]),
                     'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::a('Edit', ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                    Html::a(Yii::t('rbac','Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             } else {
                 return [
