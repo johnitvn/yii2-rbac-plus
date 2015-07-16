@@ -1,10 +1,10 @@
 <div class="permistion-item-view">
     <table class="table table-striped table-bordered detail-view">
         <tbody>
-            <tr><th>Permission Name</th><td><?= $model->name ?></td></tr>
-            <tr><th>Description</th><td><?= $model->description ?></td></tr>
-            <tr><th>Rule Name</th><td><?= $model->ruleName ?></td></tr>
-            <tr><th>Data</th><td><?= $model->data ?></td></tr>                      
+            <tr><th><?= $model->attributeLabels()['name'] ?></th><td><?= $model->name ?></td></tr>
+            <tr><th><?= $model->attributeLabels()['description'] ?></th><td><?= $model->description ?></td></tr>
+            <tr><th><?= $model->attributeLabels()['ruleName'] ?></th><td><?= $model->ruleName ?></td></tr>
+            <tr><th><?= $model->attributeLabels()['data'] ?></th><td><?= $model->data ?></td></tr>                      
         </tbody>
     </table>
 </div>

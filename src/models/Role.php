@@ -2,6 +2,7 @@
 
 namespace johnitvn\rbacplus\models;
 
+use Yii;
 use yii\rbac\Item;
 use johnitvn\rbacplus\AuthItemManager;
 
@@ -15,6 +16,12 @@ class Role extends AuthItem {
 
     protected function getType() {
         return Item::TYPE_ROLE;
+    }
+    
+    public function attributeLabels() {
+        $labels = parent::attributeLabels();
+        $labels['name'] = Yii::t('rbac', 'Role name');
+        return $labels;
     }
 
     public static function find($name) {

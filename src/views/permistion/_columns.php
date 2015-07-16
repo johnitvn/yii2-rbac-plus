@@ -12,13 +12,15 @@ return [
         'width' => '30px',
     ],
     [
-        'attribute' => 'name',
+        'attribute'=>'name',
+        'label' => $searchModel->attributeLabels()['name'],
     ],
     [
-        'attribute' => 'description',
+        'attribute'=>'description',
+        'label' => $searchModel->attributeLabels()['description'],
     ],    
     [
-        'attribute' => 'rule_name',
+        'label' => $searchModel->attributeLabels()['ruleName'],
         'value' => function($model){
             return $model->ruleName==null?Yii::t('rbac', 'Without rule'):$model->ruleName;
         }

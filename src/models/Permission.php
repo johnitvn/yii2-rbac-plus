@@ -2,6 +2,7 @@
 
 namespace johnitvn\rbacplus\models;
 
+use Yii;
 use yii\rbac\Item;
 use johnitvn\rbacplus\AuthItemManager;
 
@@ -17,6 +18,12 @@ class Permission extends AuthItem {
         return Item::TYPE_PERMISSION;
     }
 
+    public function attributeLabels() {
+        $labels = parent::attributeLabels();
+        $labels['name'] = Yii::t('rbac', 'Permission name');
+        return $labels;
+    }
+    
     public static function find($name) {
         return new self(AuthItemManager::getItem($name, Item::TYPE_PERMISSION));
     }

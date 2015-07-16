@@ -2,6 +2,7 @@
 
 namespace johnitvn\rbacplus\models;
 
+use Yii;
 use yii\rbac\Item;
 
 /**
@@ -14,6 +15,12 @@ class RoleSearch extends AuthItemSearch {
 
     public function __construct($config = array()) {
         parent::__construct($item = null, $config);
+    }
+    
+    public function attributeLabels() {
+        $labels = parent::attributeLabels();
+        $labels['name'] = Yii::t('rbac', 'Role name');
+        return $labels;
     }
 
     protected function getType() {
