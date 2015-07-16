@@ -58,6 +58,14 @@ return [
     
     /* 2. Permisstion Views */  
     'Permisstions Manager'=>'Quản lý các permission',
+    
+    
+    /* =========== Permisstion Manager  =============*/
+    /* 1. Permisstion Model */
+    'Role name'=>'Tên role',
+    
+    /* 2. Permisstion Views */  
+    'Roles Manager'=>'Quản lý các role',
 
     
 

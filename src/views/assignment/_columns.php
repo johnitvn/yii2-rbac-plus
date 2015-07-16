@@ -31,11 +31,8 @@ $columns[] = [
     'urlCreator' => function($action, $model, $key, $index) {
         return Url::to([$action, 'id' => $key]);
     }, 
-    'updateOptions' => [
-        'role' => 'modal-remote',
-        'title' => 'Update',
-        'data-toggle' => 'tooltip'
-    ],    
+    'updateOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac','Update'), 'data-toggle' => 'tooltip'],
+
 ];
 return $columns;
 

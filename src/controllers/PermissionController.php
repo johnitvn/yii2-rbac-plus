@@ -96,8 +96,8 @@ class PermissionController extends Controller {
                 return [
                     'forceReload' => 'true',
                     'title' => Yii::t('rbac', "Create new {0}",["Permission"]),
-                    'content' => '<span class="text-success">Create AuthItem success</span>',
-                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    'content' => '<span class="text-success">'.Yii::t('rbac', "Have been create new {0} success",["Permission"]).'</span>',
+                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
                     Html::a(Yii::t('rbac','Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             } else {               
@@ -152,7 +152,7 @@ class PermissionController extends Controller {
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
                     'forceReload' => 'true',
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Permission']),
+                    'title' => $name,
                     'content' => $this->renderPartial('view', [
                         'model' => $this->findModel($name),
                     ]),

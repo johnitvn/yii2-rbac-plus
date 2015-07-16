@@ -18,7 +18,8 @@ class Bootstrap implements BootstrapInterface
     * @return void
     */
     public function bootstrap($app){  
-
+        Yii::$app->language = 'vi';
+        
         // Set alias for extension source
         Yii::setAlias("@rbacplus","@vendor/johnitvn/yii2-rbac-plus/src");
 
