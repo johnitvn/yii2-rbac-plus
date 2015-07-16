@@ -65,7 +65,7 @@ class Rule extends Model {
         $authManager = Yii::$app->authManager;
         $value = $this->name;
         if ($authManager->getRule($value) !== null) {
-            $message = Yii::t('rbac', '{attribute} "{value}" has already been taken.');
+            $message = Yii::t('yii', '{attribute} "{value}" has already been taken.');
             $params = [
                 'attribute' => $this->getAttributeLabel('name'),
                 'value' => $value,
