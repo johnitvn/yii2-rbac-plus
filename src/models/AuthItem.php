@@ -55,7 +55,7 @@ abstract class AuthItem extends Model {
         return [
             [['ruleName'], 'in',
                 'range' => array_keys(Yii::$app->authManager->getRules()),
-                'message' => 'Rule not exists'],
+                'message' => Yii::t('rbac','Rule not exists')],
             [['name'], 'required'],
             [['name'], 'unique', 'when' => function() {
                     return $this->isNewRecord || ($this->item->name != $this->name);

@@ -30,11 +30,18 @@ return [
     'Are you sure want to delete this item'=>'Bạn có thực sự chắc chắn rằng bạn muốn xóa mục này không?',// for confirm delete
     
   
-    /* =========== Rule Manager  =============*/
+    /* =========== Auth Item Model  =============*/
+    'Name'=>'Tên',
+    'Description'=>'Mô tả',
+    'Rule Name'=>'Tên Rule',
+    'Data'=>'Data',
+    'Rule not exists'=>'Rule không tồn tại',
+    
+    
+       /* =========== Rule Manager  =============*/
     /* 1. Rule Model */
     'Rule Name' => 'Tên Rule',// Rule Model
     'Class Name'=>'Tên class',// Rule Model   
-    '{attribute} "{value}" has already been taken.'=>'"{value}" rule đã tồn tại. Bạn cần chọn tên khác.',
     'Class "{className}" not exist'=>'Class "{className}" không tồn tại',
     'Class "{className}" must extends yii\rbac\Rule'=>'Class "{className}" cần phải extends yii\rbac\Rule',
     'The "{className}::\$name" is not set'=>'Biến "{className}::\$name" chưa được khai báo hoặc nó bằng null',
@@ -43,7 +50,14 @@ return [
     
      /* 2. Rule Views */  
     'Rules Manager' => 'Quản lý các rule', 
+       
     
+    /* =========== Permisstion Manager  =============*/
+    /* 1. Permisstion Model */
+    'Permission name'=>'Tên permistion',
+    
+    /* 2. Permisstion Views */  
+    'Permisstions Manager'=>'Quản lý các permission',
 
     
 

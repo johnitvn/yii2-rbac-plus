@@ -17,12 +17,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ruleName')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data')->textarea(['rows' => 5]) ?>
+    <?='' //$form->field($model, 'data')->textarea(['rows' => 5]) ?>
 
   
     <?php if (!Yii::$app->request->isAjax){ ?>
             <div class="form-group">
-            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::submitButton(Yii::t('rbac','Save'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
     <?php } ?>
 
