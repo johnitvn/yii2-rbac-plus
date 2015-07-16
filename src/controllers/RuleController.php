@@ -155,7 +155,7 @@ class RuleController extends Controller {
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
                     'forceReload' => 'true',
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Rule']),
+                    'title' => $name,
                     'content' => $this->renderPartial('view', [
                         'model' => $this->findModel($name),
                     ]),
