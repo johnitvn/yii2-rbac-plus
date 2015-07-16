@@ -14,7 +14,7 @@ use johnitvn\rbacplus\models\PermissionSearch;
 /**
  * PermistionController implements the CRUD actions for AuthItem model.
  */
-class PermistionController extends Controller {
+class PermissionController extends Controller {
 
     /**
      * @inheritdoc
