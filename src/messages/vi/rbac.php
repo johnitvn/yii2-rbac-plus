@@ -23,6 +23,7 @@ return [
     'Close'=>'Đóng',
     'Save'=>'Lưu lại',
     'Edit'=>'Sửa',
+    'Back'=>'Quay lại',
     'Ok'=>'Đồng ý',
     'Cancel'=>'Hủy',
     'Create More'=>'Tạo thêm',

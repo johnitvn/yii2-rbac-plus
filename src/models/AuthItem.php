@@ -11,7 +11,7 @@ use johnitvn\rbacplus\AuthItemManager;
  * @since 1.0.0
  */
 abstract class AuthItem extends Model {
-
+    
     protected $item;
     public $name;
     public $description;
@@ -55,11 +55,11 @@ abstract class AuthItem extends Model {
         return [
             [['ruleName'], 'in',
                 'range' => array_keys(Yii::$app->authManager->getRules()),
-                'message' => Yii::t('rbac','Rule not exists')],
+                'message' => Yii::t('rbac', 'Rule not exists')],
             [['name'], 'required'],
             [['name'], 'unique', 'when' => function() {
-                    return $this->isNewRecord || ($this->item->name != $this->name);
-                }],
+            return $this->isNewRecord || ($this->item->name != $this->name);
+        }],
             [['description', 'data', 'ruleName'], 'default'],
             [['name'], 'string', 'max' => 64]
         ];
@@ -89,41 +89,44 @@ abstract class AuthItem extends Model {
      * @return boolean
      */
     public function save() {
-        
-        if (!$this->validate()) {  
+
+        if (!$this->validate()) {
             return false;
         }
         
-        if ($this->item == null) {
-            // On create new item
-            $item = AuthItemManager::createItem($this->name, $this->getType());
-            $item->description = $this->description;
-            $item->ruleName = $this->ruleName == null ? null : $this->ruleName;
-            $item->data = $this->data === null || $this->data === '' ? null : Json::decode($this->data);
-            if (AuthItemManager::add($item)) {
-                $this->item = $item;
-                return true;
-            }
+        $this->beforeSave();
+        $item = AuthItemManager::createItem($this->name, $this->getType());
+        $item->description = $this->description;
+        $item->ruleName = $this->ruleName;
+        $item->data = $this->data === null || $this->data === '' ? null : Json::decode($this->data);
+
+        if ($this->item == null && !AuthItemManager::add($item)) {
             return false;
-        } else {
-            // On update item
-            $item = AuthItemManager::createItem($this->name, $this->getType());
-            $item->description = $this->description;
-            $item->ruleName = $this->ruleName;
-            $item->data = $this->data === null || $this->data === '' ? null : Json::decode($this->data);
-            if (AuthItemManager::update($this->item->name, $item)) {
-                $this->item = $item;
-                return true;
-            }
+        } else if ($this->item !== null && !AuthItemManager::update($this->item->name, $item)) {
             return false;
         }
+        $isNewRecord = $this->item == null?true:false;
+        $this->isNewRecord = !$isNewRecord;
+        $this->item = $item;
+        $this->afterSave($isNewRecord);        
+        return true;
     }
     
-    public function delete(){
-        if($this->isNewRecord){
+    public function beforeSave(){
+        
+    }
+    
+    public function afterSave(){
+        
+    }
+    
+    
+
+    public function delete() {
+        if ($this->isNewRecord) {
             throw new \yii\base\Exception("Call delete() function in new record");
         }
-        return AuthItemManager::deleteItem($this->name,$this->getType());
+        return AuthItemManager::deleteItem($this->name, $this->getType());
     }
 
     /**

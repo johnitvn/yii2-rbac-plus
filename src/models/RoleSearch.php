@@ -16,10 +16,11 @@ class RoleSearch extends AuthItemSearch {
     public function __construct($config = array()) {
         parent::__construct($item = null, $config);
     }
-    
+
     public function attributeLabels() {
         $labels = parent::attributeLabels();
         $labels['name'] = Yii::t('rbac', 'Role name');
+        $labels['permissions'] = Yii::t('rbac', 'Permissions');
         return $labels;
     }
 

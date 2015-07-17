@@ -80,5 +80,5 @@ class AuthItemManager {
         $authManager = Yii::$app->authManager;
         return $authManager->update($oldName, $item);
     }
-
+    
 }

@@ -57,9 +57,9 @@ class PermissionController extends Controller {
                 'title' => $name,
                 'content' => $this->renderPartial('view', [
                     'model' => $this->findModel($name),
-                ]),
-                'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                Html::a(Yii::t('rbac','Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                ]),                
+                'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                Html::a(Yii::t('rbac', 'Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
             ];
         } else {
             return $this->render('view', [
@@ -85,29 +85,29 @@ class PermissionController extends Controller {
             Yii::$app->response->format = Response::FORMAT_JSON;
             if ($request->isGet) {
                 return [
-                    'title' => Yii::t('rbac', "Create new {0}",["Permission"]),
+                    'title' => Yii::t('rbac', "Create new {0}", ["Permission"]),
                     'content' => $this->renderPartial('create', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
                     'forceReload' => 'true',
-                    'title' => Yii::t('rbac', "Create new {0}",["Permission"]),
-                    'content' => '<span class="text-success">'.Yii::t('rbac', "Have been create new {0} success",["Permission"]).'</span>',
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::a(Yii::t('rbac','Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                    'title' => Yii::t('rbac', "Create new {0}", ["Permission"]),
+                    'content' => '<span class="text-success">' . Yii::t('rbac', "Have been create new {0} success", ["Permission"]) . '</span>',
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a(Yii::t('rbac', 'Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
-            } else {               
+            } else {
                 return [
-                    'title' => Yii::t('rbac', "Create new {0}",["Permission"]),
+                    'title' => Yii::t('rbac', "Create new {0}", ["Permission"]),
                     'content' => $this->renderPartial('create', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             }
         } else {
@@ -142,12 +142,12 @@ class PermissionController extends Controller {
             Yii::$app->response->format = Response::FORMAT_JSON;
             if ($request->isGet) {
                 return [
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Permission']),
+                    'title' => Yii::t('rbac', "Update {0}", ['"' . $name . '" Permission']),
                     'content' => $this->renderPartial('update', [
                         'model' => $this->findModel($name),
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
@@ -156,17 +156,17 @@ class PermissionController extends Controller {
                     'content' => $this->renderPartial('view', [
                         'model' => $this->findModel($name),
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::a(Yii::t('rbac','Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a(Yii::t('rbac', 'Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             } else {
                 return [
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Permission']),
+                    'title' => Yii::t('rbac', "Update {0}", ['"' . $name . '" Permission']),
                     'content' => $this->renderPartial('update', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             }
         } else {
@@ -219,7 +219,7 @@ class PermissionController extends Controller {
         if (($model = Permission::find($name)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('rbac','The requested page does not exist.'));
+            throw new NotFoundHttpException(Yii::t('rbac', 'The requested page does not exist.'));
         }
     }
 

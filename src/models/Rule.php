@@ -140,7 +140,7 @@ class Rule extends Model {
             }
             $this->item = $item;
         }
-
+        $this->isNewRecord = false;
         return true;
     }
 
