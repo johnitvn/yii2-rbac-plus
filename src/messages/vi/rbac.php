@@ -28,7 +28,7 @@ return [
     'Create More'=>'Tạo thêm',
     'Are you sure?'=>'Bạn có chắc chắn?',// for confirm delete
     'Are you sure want to delete this item'=>'Bạn có thực sự chắc chắn rằng bạn muốn xóa mục này không?',// for confirm delete
-    
+    '(not use)'=>'(không dùng)',
   
     /* =========== Auth Item Model  =============*/
     'Name'=>'Tên',

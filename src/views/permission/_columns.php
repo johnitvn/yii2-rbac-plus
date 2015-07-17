@@ -21,7 +21,9 @@ return [
     ],    
     [
         'label' => $searchModel->attributeLabels()['ruleName'],
-        'attribute' => 'ruleName'
+        'value' => function($model){
+            return $model->ruleName==null?Yii::t('rbac','(not use)'):$model->ruleName;
+        }
     ],
     [
         'class' => 'kartik\grid\ActionColumn',

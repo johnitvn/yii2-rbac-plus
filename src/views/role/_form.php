@@ -2,9 +2,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model johnitvn\rbacplus\models\AuthItem */
-/* @var $form yii\widgets\ActiveForm */
+$rules = Yii::$app->authManager->getRules();
+$rulesNames = array_keys($rules);
+$rulesDatas = array_merge([''=>Yii::t('rbac','(not use)')],array_combine($rulesNames,$rulesNames));        
 ?>
 
 <div class="auth-item-form">
@@ -15,9 +15,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 1]) ?>
 
-    <?= $form->field($model, 'ruleName')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'data')->textarea(['rows' => 5]) ?>
+    <?= $form->field($model, 'ruleName')->dropDownList($rulesData) ?>
 
   
     <?php if (!Yii::$app->request->isAjax){ ?>
