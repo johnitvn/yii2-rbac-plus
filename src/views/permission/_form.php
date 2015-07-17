@@ -18,9 +18,9 @@ $rulesDatas = array_merge([''=>Yii::t('rbac','(not use)')],array_combine($rulesN
 
     <?= $form->field($model, 'ruleName')->dropDownList($rulesDatas) ?>
 
-    <?php if (!Yii::$app->request->isAjax){ ?>
-            <div class="form-group">
-            <?= Html::submitButton(Yii::t('rbac','Save'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <?php if (!Yii::$app->request->isAjax) { ?>
+        <div class="form-group">
+            <?= Html::submitButton(Yii::t('rbac', 'Save'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
     <?php } ?>
 

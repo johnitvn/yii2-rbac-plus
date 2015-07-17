@@ -1,4 +1,5 @@
 <?php
+
 use yii\helpers\Url;
 
 $columns = [
@@ -14,6 +15,23 @@ $columns = [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'login',
     ],
+    [
+        'label' => 'Roles',
+        'content' => function($model) {
+            $authManager = Yii::$app->authManager;
+            $idField = Yii::$app->getModule('rbac')->userModelIdField;
+            $roles = [];
+            foreach ($authManager->getRolesByUser($model->{$idField}) as $role) {
+               $roles[] = $role->name; 
+            }   
+            if(count($roles)==0){
+                return Yii::t("yii","(not set)");
+            }else{
+                return implode(",", $roles);
+            }
+            
+        }
+    ],
 ];
 
 
@@ -24,17 +42,16 @@ if ($extraColums !== null) {
 }
 $columns[] = [
     'class' => 'kartik\grid\ActionColumn',
-    'template'=>'{update}',
-    'header'=>'Assignment',
+    'template' => '{update}',
+    'header' => Yii::t('rbac', 'Assignment'),
     'dropdown' => false,
     'vAlign' => 'middle',
     'urlCreator' => function($action, $model, $key, $index) {
-        return Url::to([$action, 'id' => $key]);
-    }, 
-    'updateOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac','Update'), 'data-toggle' => 'tooltip'],
-
-];
-return $columns;
+        return Url::to(['assignment', 'id' => $key]);
+    },
+            'updateOptions' => ['role' => 'modal-remote', 'title' => Yii::t('rbac', 'Update'), 'data-toggle' => 'tooltip'],
+        ];
+        return $columns;
 
 
         

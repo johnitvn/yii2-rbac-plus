@@ -23,7 +23,6 @@ return [
     'Close'=>'Đóng',
     'Save'=>'Lưu lại',
     'Edit'=>'Sửa',
-    'Back'=>'Quay lại',
     'Ok'=>'Đồng ý',
     'Cancel'=>'Hủy',
     'Create More'=>'Tạo thêm',
@@ -68,7 +67,11 @@ return [
     /* 2. Permisstion Views */  
     'Roles Manager'=>'Quản lý các role',
 
+    /* =========== User role assignemnt  =============*/
+    /* 1. Permisstion Views */      
+    'User Assignemnt'=>'Phân quyền người dùng',
+    'Assignment'=>'Phân quyền',
     
-
+    
 ];
 
