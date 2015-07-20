@@ -17,7 +17,7 @@
     "require": {
         "yiisoft/yii2": ">=2.0.4",
         "yiisoft/yii2-bootstrap": "*",        
-        "johnitvn/yii2-ajaxcrud-assets": "*"
+        "johnitvn/yii2-ajaxcrud": "*"
     },
     "autoload": {
         "psr-4": {
