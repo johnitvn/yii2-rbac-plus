@@ -19,3 +19,4 @@ vendor
 
 # Windows shortcuts
 *.lnk
+composer.lock
