@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
 use kartik\grid\GridView;
-use johnitvn\ajaxcrudassets\CrudAsset;
+use johnitvn\ajaxcrud\CrudAsset;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */

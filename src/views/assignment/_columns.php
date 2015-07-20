@@ -9,11 +9,11 @@ $columns = [
     ],
     [
         'class' => '\kartik\grid\DataColumn',
-        'attribute' => 'id',
+        'attribute' => Yii::$app->getModule('rbac')->userModelIdField,
     ],
     [
         'class' => '\kartik\grid\DataColumn',
-        'attribute' => 'login',
+        'attribute' => Yii::$app->getModule('rbac')->userModelLoginField,
     ],
     [
         'label' => 'Roles',
