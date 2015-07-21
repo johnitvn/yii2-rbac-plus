@@ -1,9 +1,9 @@
 <?php
-
 namespace johnitvn\rbacplus\models;
 
+use Yii;
 use yii\data\ArrayDataProvider;
-use johnitvn\rbacplus\AuthItemManager;
+use yii\rbac\Item;
 
 /**
  * @author John Martin <john.itvn@gmail.com>
@@ -30,8 +30,13 @@ abstract class AuthItemSearch extends AuthItem {
      * @return \yii\data\ActiveDataProvider|\yii\data\ArrayDataProvider
      */
     public function search($params) {
-        $items = AuthItemManager::getItems($this->getType());
-
+        $authManager = Yii::$app->authManager;
+        if ($this->getType() == Item::TYPE_ROLE) {
+            $items = $authManager->getRoles();
+        } else {
+            $items = $authManager->getPermissions();
+        }
+        
         if ($this->load($params) && $this->validate() && (trim($this->name) !== '' || trim($this->description) !== '')) {
             $search = strtolower(trim($this->name));
             $desc = strtolower(trim($this->description));

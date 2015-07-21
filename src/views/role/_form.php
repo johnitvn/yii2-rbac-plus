@@ -1,7 +1,5 @@
 <?php
 
-use yii\rbac\Item;
-use johnitvn\rbacplus\AuthItemManager;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -9,7 +7,8 @@ $rules = Yii::$app->authManager->getRules();
 $rulesNames = array_keys($rules);
 $rulesDatas = array_merge(['' => Yii::t('rbac', '(not use)')], array_combine($rulesNames, $rulesNames));
 
-$permissions = AuthItemManager::getItems(Item::TYPE_PERMISSION);
+$authManager = Yii::$app->authManager;   
+$permissions = $authManager->getPermissions();
 ?>
 
 <div class="auth-item-form">

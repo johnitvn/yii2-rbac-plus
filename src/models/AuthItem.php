@@ -4,14 +4,15 @@ namespace johnitvn\rbacplus\models;
 
 use Yii;
 use yii\base\Model;
-use johnitvn\rbacplus\AuthItemManager;
+use yii\rbac\Item;
+
 
 /**
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0
  */
 abstract class AuthItem extends Model {
-    
+
     protected $item;
     public $name;
     public $description;
@@ -93,40 +94,61 @@ abstract class AuthItem extends Model {
         if (!$this->validate()) {
             return false;
         }
-        
+
         $this->beforeSave();
-        $item = AuthItemManager::createItem($this->name, $this->getType());
+        $authManager = Yii::$app->authManager;
+
+        // Create new item    
+        if ($this->getType() == Item::TYPE_ROLE) {
+            $item = $authManager->createRole($this->name);
+        } else {
+            $item = $authManager->createPermission($this->name);
+        }
+
+        // Set item data
         $item->description = $this->description;
         $item->ruleName = $this->ruleName;
         $item->data = $this->data === null || $this->data === '' ? null : Json::decode($this->data);
 
-        if ($this->item == null && !AuthItemManager::add($item)) {
+        // save
+        if ($this->item == null && !$authManager->add($item)) {
             return false;
-        } else if ($this->item !== null && !AuthItemManager::update($this->item->name, $item)) {
+        } else if ($this->item !== null && !$authManager->update($this->item->name, $item)) {
             return false;
         }
-        $isNewRecord = $this->item == null?true:false;
+
+        $isNewRecord = $this->item == null ? true : false;
         $this->isNewRecord = !$isNewRecord;
         $this->item = $item;
-        $this->afterSave($isNewRecord);        
+        $this->afterSave($isNewRecord);
+
         return true;
     }
-    
-    public function beforeSave(){
+
+    public function beforeSave() {
         
     }
-    
-    public function afterSave(){
+
+    public function afterSave() {
         
     }
-    
-    
 
     public function delete() {
         if ($this->isNewRecord) {
             throw new \yii\base\Exception("Call delete() function in new record");
         }
-        return AuthItemManager::deleteItem($this->name, $this->getType());
+
+
+        $authManager = Yii::$app->authManager;
+
+        // Create new item    
+        if ($this->getType() == Item::TYPE_ROLE) {
+            $item = $authManager->getRole($this->name);
+        } else {
+            $item = $authManager->getPermission($this->name);
+        }
+
+        return $authManager->remove($item);
     }
 
     /**
