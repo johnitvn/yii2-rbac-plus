@@ -71,7 +71,5 @@ return [
     /* 1. Permisstion Views */      
     'User Assignemnt'=>'Phân quyền người dùng',
     'Assignment'=>'Phân quyền',
-    
-    
 ];
 
