@@ -2,11 +2,7 @@
 
 use yii\helpers\Url;
 
-return [
-    [
-        'class' => 'kartik\grid\CheckboxColumn',
-        'width' => '20px',
-    ],
+return [   
     [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
