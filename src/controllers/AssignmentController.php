@@ -10,7 +10,7 @@ use johnitvn\rbacplus\models\AssignmentSearch;
 use johnitvn\rbacplus\models\AssignmentForm;
 
 /**
- * Description of ManagerController
+ * AssignmentController is controller for manager user assignment
  *
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0
@@ -58,6 +58,7 @@ class AssignmentController extends Controller {
         } else {
             return $this->render('assignment', [
                         'model' => $model,
+                        'formModel' => $formModel,
             ]);
         }
     }

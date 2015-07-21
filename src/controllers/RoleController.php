@@ -12,7 +12,7 @@ use johnitvn\rbacplus\models\Role;
 use johnitvn\rbacplus\models\RoleSearch;
 
 /**
- * PermistionController implements the CRUD actions for AuthItem model.
+ * RoleController is controller for manager role
  */
 class RoleController extends Controller {
 

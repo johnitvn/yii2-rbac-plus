@@ -19,7 +19,7 @@ class Bootstrap implements BootstrapInterface {
      */
     public function bootstrap($app) {
         // Set alias for extension source
-        Yii::setAlias("@rbacplus", "@vendor/johnitvn/yii2-rbac-plus/src");
+        Yii::setAlias("@rbacplus", __DIR__);
 
         // Setup i18n compoment for translate all category user*
         if (!isset(Yii::$app->get('i18n')->translations['rbac*'])) {

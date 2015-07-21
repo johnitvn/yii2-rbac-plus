@@ -12,7 +12,7 @@ use johnitvn\rbacplus\models\Rule;
 use johnitvn\rbacplus\models\RuleSearch;
 
 /**
- * Description of RuleController
+ * RuleController is controller for manager rule
  *
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0

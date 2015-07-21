@@ -12,7 +12,7 @@ use johnitvn\rbacplus\models\Permission;
 use johnitvn\rbacplus\models\PermissionSearch;
 
 /**
- * PermissionController implements the CRUD actions for AuthItem model.
+ * PermissionController is controller for manager permissions
  */
 class PermissionController extends Controller {
 
