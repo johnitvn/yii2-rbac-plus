@@ -16,6 +16,9 @@ Features
 + Nice views to intergrate right away
 + Integrated with [Yii2-user-plus](https://github.com/johnitvn/yii2-user-plus) - flexible user management module
 
+<img src="http://s17.postimg.org/8p7idb9jz/screencapture_fastandfurious_dev_apps_test_user.png" alt="Yii2 RBAC manager" width="640">
+
+
 Installation
 ------------
 
