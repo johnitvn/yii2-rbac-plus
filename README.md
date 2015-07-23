@@ -120,7 +120,7 @@ Example:
 The default it is null. You need config this when you want to restrict access to any action in some controller of <b>Rbac Plus</b> module <BR>
 Example:
 ````php
-'beforeCreateController'=>function($route){
+'beforeAction'=>function($action){
     /**
     *@var yii\base\Action $action the action to be executed.
     */    
