@@ -47,10 +47,11 @@ class AssignmentForm extends Model {
     }
 
     public function save() {
-        Yii::trace('On Save');
         $this->authManager->revokeAll(intval($this->userId));
-        foreach ($this->roles as $role) {
-            $this->authManager->assign($this->authManager->getRole($role), $this->userId);
+        if ($this->roles != null) {
+            foreach ($this->roles as $role) {
+                $this->authManager->assign($this->authManager->getRole($role), $this->userId);
+            }
         }
         return true;
     }

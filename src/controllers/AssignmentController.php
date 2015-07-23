@@ -48,6 +48,7 @@ class AssignmentController extends Controller {
             }
             return [
                 'title' => $model->{$this->rbacModule->userModelLoginField},
+                'forceReload' => "true",
                 'content' => $this->renderPartial('assignment', [
                     'model' => $model,
                     'formModel' => $formModel,

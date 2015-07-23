@@ -12,6 +12,7 @@ $this->title = Yii::t('rbac', 'User Assignemnt');
 $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 echo GridView::widget([
+    'id' => 'crud-datatable',
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => require __DIR__ . '/_columns.php',
