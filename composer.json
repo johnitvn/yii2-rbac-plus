@@ -9,15 +9,17 @@
             "email": "john.itvn@gmail.com",
             "homepage": "https://github.com/johnitvn?tab=repositories"
         }
-    ],
+    ],    
     "support": {
         "issues": "https://github.com/johnitvn/yii2-rbac-plus/issues?state=open",
         "source": "https://github.com/johnitvn/yii2-rbac-plus"
     },
+    "suggest": {
+        "johnitvn/yii2-user-plus": "High flexible user management extension for yii2"
+    },
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": ">=2.0.4",
-        "yiisoft/yii2-bootstrap": "*",        
         "johnitvn/yii2-ajaxcrud": "*"
     },
     "autoload": {
