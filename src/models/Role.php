@@ -42,9 +42,11 @@ class Role extends AuthItem {
         if (!$insert) {
             $authManager->removeChildren($role);
         }
-        foreach ($this->permissions as $permissionName) {
-            $permistion = $authManager->getPermission($permissionName);
-            $authManager->addChild($role, $permistion);
+        if ($this->permissions != null && is_array($this->permissions)) {
+            foreach ($this->permissions as $permissionName) {
+                $permistion = $authManager->getPermission($permissionName);
+                $authManager->addChild($role, $permistion);
+            }
         }
     }
 
