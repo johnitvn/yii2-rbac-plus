@@ -8,7 +8,7 @@ use johnitvn\ajaxcrud\CrudAsset;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel mdm\admin\models\searchs\Menu */
-$this->title = Yii::t('rbac', 'User Assignemnt');
+$this->title = Yii::t('rbac', 'User Assignment');
 $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 echo GridView::widget([

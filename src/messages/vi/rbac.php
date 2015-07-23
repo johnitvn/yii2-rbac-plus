@@ -69,7 +69,7 @@ return [
 
     /* =========== User role assignemnt  =============*/
     /* 1. Permisstion Views */      
-    'User Assignemnt'=>'Phân quyền người dùng',
+    'User Assignment'=>'Phân quyền người dùng',
     'Assignment'=>'Phân quyền',
 ];
 
