@@ -6,8 +6,6 @@ use Yii;
 use yii\rbac\Item;
 
 /**
- * Description of Permistion
- *
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0
  */

@@ -6,8 +6,6 @@ use Yii;
 use yii\rbac\Item;
 
 /**
- * Description of Permistion
- *
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0
  */
@@ -17,6 +15,9 @@ class RoleSearch extends AuthItemSearch {
         parent::__construct($item = null, $config);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function attributeLabels() {
         $labels = parent::attributeLabels();
         $labels['name'] = Yii::t('rbac', 'Role name');
@@ -24,6 +25,9 @@ class RoleSearch extends AuthItemSearch {
         return $labels;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function getType() {
         return Item::TYPE_ROLE;
     }

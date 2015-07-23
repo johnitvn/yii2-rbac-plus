@@ -6,6 +6,7 @@ use Yii;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\helpers\Html;
+use johnitvn\rbacplus\Module;
 use johnitvn\rbacplus\models\AssignmentSearch;
 use johnitvn\rbacplus\models\AssignmentForm;
 
@@ -14,17 +15,27 @@ use johnitvn\rbacplus\models\AssignmentForm;
  *
  * @author John Martin <john.itvn@gmail.com>
  * @since 1.0.0
- * @property \johnitvn\rbacplus\Module $rbacModule
  */
 class AssignmentController extends Controller {
 
+    /**
+     * The current rbac module
+     * @var Module $rbacModule
+     */
     protected $rbacModule;
 
+    /**
+     * @inheritdoc
+     */
     public function init() {
         parent::init();
         $this->rbacModule = Yii::$app->getModule('rbac');
     }
 
+    /**
+     * Show list of user for assignment
+     * @return mixed
+     */
     public function actionIndex() {
         $searchModel = new AssignmentSearch;
         $dataProvider = $searchModel->search();
@@ -36,6 +47,11 @@ class AssignmentController extends Controller {
         ]);
     }
 
+    /**
+     * Assignment roles to user
+     * @param mixed $id The user id
+     * @return mixed
+     */
     public function actionAssignment($id) {
         $model = call_user_func($this->rbacModule->userModelClassName . '::findOne', $id);
         $formModel = new AssignmentForm($id);

@@ -125,14 +125,25 @@ abstract class AuthItem extends Model {
         return true;
     }
 
+    /**
+     * Call before save AuthItem
+     */
     public function beforeSave() {
         
     }
 
+    /**
+     * Call after save AuthItem
+     */
     public function afterSave() {
         
     }
 
+    /**
+     * Delete AuthItem
+     * @return  boolean whether the role or permission is successfully removed
+     * @throws \yii\base\Exception When call delete() function in new record
+     */
     public function delete() {
         if ($this->isNewRecord) {
             throw new \yii\base\Exception("Call delete() function in new record");

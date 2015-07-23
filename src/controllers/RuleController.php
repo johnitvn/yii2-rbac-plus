@@ -61,8 +61,8 @@ class RuleController extends Controller {
                 'content' => $this->renderPartial('view', [
                     'model' => $this->findModel($name),
                 ]),
-                'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                Html::a(Yii::t('rbac','Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                Html::a(Yii::t('rbac', 'Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
             ];
         } else {
             return $this->render('view', [
@@ -88,29 +88,29 @@ class RuleController extends Controller {
             Yii::$app->response->format = Response::FORMAT_JSON;
             if ($request->isGet) {
                 return [
-                    'title' => Yii::t('rbac', "Create new {0}",["Rule"]),
+                    'title' => Yii::t('rbac', "Create new {0}", ["Rule"]),
                     'content' => $this->renderPartial('create', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
                     'forceReload' => 'true',
-                    'title' => Yii::t('rbac', "Create new {0}",["Rule"]),
-                    'content' => '<span class="text-success">'.Yii::t('rbac', "Have been create new {0} success",["Rule"]).'</span>',
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::a(Yii::t('rbac','Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                    'title' => Yii::t('rbac', "Create new {0}", ["Rule"]),
+                    'content' => '<span class="text-success">' . Yii::t('rbac', "Have been create new {0} success", ["Rule"]) . '</span>',
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a(Yii::t('rbac', 'Create More'), ['create'], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             } else {
                 return [
-                    'title' => Yii::t('rbac', "Create new {0}",["Rule"]),
+                    'title' => Yii::t('rbac', "Create new {0}", ["Rule"]),
                     'content' => $this->renderPartial('create', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             }
         } else {
@@ -145,12 +145,12 @@ class RuleController extends Controller {
             Yii::$app->response->format = Response::FORMAT_JSON;
             if ($request->isGet) {
                 return [
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Rule']),
+                    'title' => Yii::t('rbac', "Update {0}", ['"' . $name . '" Rule']),
                     'content' => $this->renderPartial('update', [
                         'model' => $this->findModel($name),
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             } else if ($model->load($request->post()) && $model->save()) {
                 return [
@@ -159,17 +159,17 @@ class RuleController extends Controller {
                     'content' => $this->renderPartial('view', [
                         'model' => $this->findModel($name),
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::a(Yii::t('rbac','Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a(Yii::t('rbac', 'Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
                 ];
             } else {
                 return [
-                    'title' => Yii::t('rbac', "Update {0}",['"'.$name.'" Rule']),
+                    'title' => Yii::t('rbac', "Update {0}", ['"' . $name . '" Rule']),
                     'content' => $this->renderPartial('update', [
                         'model' => $model,
                     ]),
-                    'footer' => Html::button(Yii::t('rbac','Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
-                    Html::button(Yii::t('rbac','Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
+                    'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::button(Yii::t('rbac', 'Save'), ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             }
         } else {
@@ -222,7 +222,7 @@ class RuleController extends Controller {
         if (($model = Rule::find($name)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('rbac','The requested page does not exist.'));
+            throw new NotFoundHttpException(Yii::t('rbac', 'The requested page does not exist.'));
         }
     }
 

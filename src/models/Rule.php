@@ -13,7 +13,7 @@ class Rule extends Model {
 
     /**
      *
-     * @var type 
+     * @var string 
      */
     public $name;
 
@@ -28,7 +28,7 @@ class Rule extends Model {
     private $item;
 
     /**
-     * @var bool 
+     * @var boolean 
      */
     public $isNewRecord = true;
 
@@ -61,6 +61,9 @@ class Rule extends Model {
         ];
     }
 
+    /**
+     * Check rule name is unique if not add error
+     */
     public function unique() {
         $authManager = Yii::$app->authManager;
         $value = $this->name;
@@ -80,17 +83,17 @@ class Rule extends Model {
     public function classExists() {
         $message = null;
         if (!class_exists($this->className)) {
-            $message =  'Class "{className}" not exist';
+            $message = 'Class "{className}" not exist';
         } else if (!is_subclass_of($this->className, yii\rbac\Rule::className())) {
-            $message =  'Class "{className}" must extends yii\rbac\Rule';
+            $message = 'Class "{className}" must extends yii\rbac\Rule';
         } else if ((new $this->className())->name === null) {
-            $message =  'The "{className}::\$name" is not set';
+            $message = 'The "{className}::\$name" is not set';
         } else if ((new $this->className())->name !== $this->name) {
-            $message =  'The "{className}::\$name" is incorrect with the name of rule you have set';
+            $message = 'The "{className}::\$name" is incorrect with the name of rule you have set';
         }
 
         if ($message !== null) {
-            $this->addError('className',Yii::t('rbac',$message,['className'=>$this->className]));
+            $this->addError('className', Yii::t('rbac', $message, ['className' => $this->className]));
         }
     }
 
@@ -144,6 +147,11 @@ class Rule extends Model {
         return true;
     }
 
+    /**
+     * Delete rule
+     * @return  boolean whether the rule is successfully removed
+     * @throws \yii\base\Exception When call delete() function in new record
+     */
     public function delete() {
         if ($this->isNewRecord) {
             throw new \yii\base\Exception("Call delete() function in new record");

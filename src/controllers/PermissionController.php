@@ -13,6 +13,8 @@ use johnitvn\rbacplus\models\PermissionSearch;
 
 /**
  * PermissionController is controller for manager permissions
+ * @author John Martin <john.itvn@gmail.com>
+ * @since 1.0.0
  */
 class PermissionController extends Controller {
 
@@ -57,7 +59,7 @@ class PermissionController extends Controller {
                 'title' => $name,
                 'content' => $this->renderPartial('view', [
                     'model' => $this->findModel($name),
-                ]),                
+                ]),
                 'footer' => Html::button(Yii::t('rbac', 'Close'), ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
                 Html::a(Yii::t('rbac', 'Edit'), ['update', 'name' => $name], ['class' => 'btn btn-primary', 'role' => 'modal-remote'])
             ];
