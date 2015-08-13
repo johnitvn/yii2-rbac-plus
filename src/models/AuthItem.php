@@ -83,7 +83,7 @@ abstract class AuthItem extends Model {
      * @param type $name
      * @return AuthItem
      */
-    public abstract static function find($name);
+    //public abstract static function find($name);
 
     /**
      * Save item
