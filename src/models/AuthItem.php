@@ -125,20 +125,7 @@ abstract class AuthItem extends Model {
         return true;
     }
 
-    /**
-     * Call before save AuthItem
-     */
-    public function beforeSave() {
-        
-    }
-
-    /**
-     * Call after save AuthItem
-     */
-    public function afterSave() {
-        
-    }
-
+   
     /**
      * Delete AuthItem
      * @return  boolean whether the role or permission is successfully removed
