@@ -34,7 +34,7 @@ class Role extends AuthItem {
         return Item::TYPE_ROLE;
     }
 
-    public function afterSave($insert) {
+    public function afterSave($insert,$changedAttributes) {
         $authManager = Yii::$app->authManager;
         $role = $authManager->getRole($this->item->name);
         if (!$insert) {
