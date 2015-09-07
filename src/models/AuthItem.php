@@ -95,7 +95,7 @@ abstract class AuthItem extends Model {
             return false;
         }
 
-        $this->beforeSave();
+        //$this->beforeSave();
         $authManager = Yii::$app->authManager;
 
         // Create new item    
