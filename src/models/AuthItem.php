@@ -120,7 +120,7 @@ abstract class AuthItem extends Model {
         $isNewRecord = $this->item == null ? true : false;
         $this->isNewRecord = !$isNewRecord;
         $this->item = $item;
-        $this->afterSave($isNewRecord);
+        //$this->afterSave($isNewRecord);
 
         return true;
     }
