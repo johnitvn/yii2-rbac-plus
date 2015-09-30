@@ -120,11 +120,26 @@ abstract class AuthItem extends Model {
         $isNewRecord = $this->item == null ? true : false;
         $this->isNewRecord = !$isNewRecord;
         $this->item = $item;
-        //$this->afterSave($isNewRecord);
+        //$this->afterSave($isNewRecord,$this->attributes);
+        
+        
+        if ($this->getType() == Item::TYPE_ROLE) {
+	        $role = $authManager->getRole($this->item->name);
+	        if (!$isNewRecord) {
+	            $authManager->removeChildren($role);
+	        }
+	        if ($this->permissions != null && is_array($this->permissions)) {
+	            foreach ($this->permissions as $permissionName) {
+	                $permistion = $authManager->getPermission($permissionName);
+	                $authManager->addChild($role, $permistion);
+	            }
+	        }
+        }
+        
 
         return true;
     }
-
+    
    
     /**
      * Delete AuthItem
