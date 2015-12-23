@@ -70,8 +70,9 @@ class AssignmentSearch extends \yii\base\Model {
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
-
-        $query->andFilterWhere(['like', $this->rbacModule->userModelIdField, $this->login]);
+        
+        $query->andFilterWhere([$this->usersModule->userModelIdField => $this->id]);
+        $query->andFilterWhere(['like', $this->rbacModule->userModelLoginField, $this->login]);
 
         return $dataProvider;
     }
