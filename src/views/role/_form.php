@@ -7,8 +7,9 @@ $rules = Yii::$app->authManager->getRules();
 $rulesNames = array_keys($rules);
 $rulesDatas = array_merge(['' => Yii::t('rbac', '(not use)')], array_combine($rulesNames, $rulesNames));
 
-$authManager = Yii::$app->authManager;   
+$authManager = Yii::$app->authManager;
 $permissions = $authManager->getPermissions();
+$roles = $authManager->getRoles();
 ?>
 
 <div class="auth-item-form">
@@ -21,6 +22,40 @@ $permissions = $authManager->getPermissions();
 
     <?= $form->field($model, 'ruleName')->dropDownList($rulesDatas) ?>
 
+    <?php ?>
+    <div class="form-group field-role-permissions">
+        <label class="control-label" for="role-permissions">Roles</label>
+        <input type="hidden" name="Role[permissions]" value="">
+        <div id="role-permissions">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td style="width:1px"></td>
+                        <td style="width:1px"><b>Name</b></td>
+                        <td><b>Description</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($roles as $role):
+                        if ($model->name == $role->name) {
+                            continue;
+                        }
+                        ?>
+                        <tr>
+                            <td>
+                                <input <?= in_array($role->name, $model->roles) ? "checked" : "" ?> type="checkbox" name="Role[roles][]" value="<?= $role->name ?>">
+                            </td>
+                            <td><?= $role->name ?></td>
+                            <td><?= $role->description ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="help-block"></div>
+    </div>
+    <?php ?>
     <div class="form-group field-role-permissions">
         <label class="control-label" for="role-permissions">Permissions</label>
         <input type="hidden" name="Role[permissions]" value="">
@@ -37,7 +72,7 @@ $permissions = $authManager->getPermissions();
                     <?php foreach ($permissions as $permission): ?>
                         <tr>
                             <td>
-                                <input <?= in_array($permission->name, $model->permissions) ? "checked":"" ?> type="checkbox" name="Role[permissions][]" value="<?= $permission->name ?>">
+                                <input <?= in_array($permission->name, $model->permissions) ? "checked" : "" ?> type="checkbox" name="Role[permissions][]" value="<?= $permission->name ?>">
                             </td>
                             <td><?= $permission->name ?></td>    
                             <td><?= $permission->description ?></td>
