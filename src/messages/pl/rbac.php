@@ -12,11 +12,11 @@ return [
     /* 1. GridView */
     '* Resize table columns just like a spreadsheet by dragging the column edges.' => '* zmień szerokość kolumny, przeciągając krawędzie kolumn.', // for toolbar buttons
     'Reload Grid' => 'Przeładuj', // for toolbar buttons    
-    'All' => '', // for toolbar buttons
+    'All' => 'Wszystkie', // for toolbar buttons
     'Show all data' => 'Pokaż wszystkie dane', // for toolbar buttons
     'Page' => 'Strona', // for toolbar buttons
     'Show first page data' => 'Pokaż pierwszą stronę', // for action buttons
-    'View'=>'Показать',
+    'View'=>'Widok',
     'Update' => 'Aktualizuj', // for action buttons
     'Delete' => 'Usuń', // for action buttons    
     /*2. Modal*/
@@ -56,7 +56,7 @@ return [
     'Permission name'=>'Nazwa uprawnienia',
     
     /* 2. Permisstion Views */  
-    'Permisstions Manager'=>'menadzer uprawnień',
+    'Permisstions Manager'=>'Menadzer uprawnień',
     
     
     /* =========== Permisstion Manager  =============*/
