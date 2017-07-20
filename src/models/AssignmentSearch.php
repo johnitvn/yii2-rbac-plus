@@ -71,7 +71,7 @@ class AssignmentSearch extends \yii\base\Model {
             return $dataProvider;
         }
         
-        $query->andFilterWhere([$this->usersModule->userModelIdField => $this->id]);
+        $query->andFilterWhere([$this->rbacModule->userModelIdField => $this->id]);
         $query->andFilterWhere(['like', $this->rbacModule->userModelLoginField, $this->login]);
 
         return $dataProvider;
