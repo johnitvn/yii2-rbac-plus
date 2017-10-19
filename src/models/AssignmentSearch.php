@@ -1,10 +1,10 @@
 <?php
 
-namespace johnitvn\rbacplus\models;
+namespace amintado\rbacplus\models;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use johnitvn\rbacplus\Module;
+use amintado\rbacplus\Module;
 
 /**
  * @author John Martin <john.itvn@gmail.com>
