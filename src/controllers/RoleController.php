@@ -1,6 +1,6 @@
 <?php
 
-namespace amintado\rbacplus\controllers;
+namespace johnitvn\rbacplus\controllers;
 
 use Yii;
 use yii\web\Controller;
@@ -8,8 +8,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\helpers\Html;
-use amintado\rbacplus\models\Role;
-use amintado\rbacplus\models\RoleSearch;
+use johnitvn\rbacplus\models\Role;
+use johnitvn\rbacplus\models\RoleSearch;
 
 /**
  * RoleController is controller for manager role

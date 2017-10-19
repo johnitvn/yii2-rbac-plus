@@ -1,6 +1,6 @@
 <?php
 
-namespace amintado\rbacplus\controllers;
+namespace johnitvn\rbacplus\controllers;
 
 use Yii;
 use yii\web\Controller;
@@ -8,8 +8,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\helpers\Html;
-use amintado\rbacplus\models\Permission;
-use amintado\rbacplus\models\PermissionSearch;
+use johnitvn\rbacplus\models\Permission;
+use johnitvn\rbacplus\models\PermissionSearch;
 
 /**
  * PermissionController is controller for manager permissions

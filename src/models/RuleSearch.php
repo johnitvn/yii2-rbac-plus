@@ -1,6 +1,6 @@
 <?php
 
-namespace amintado\rbacplus\models;
+namespace johnitvn\rbacplus\models;
 
 use Yii;
 use yii\data\ArrayDataProvider;
