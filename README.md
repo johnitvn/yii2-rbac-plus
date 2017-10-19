@@ -27,13 +27,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist amintado/yii2-rbac-plus "*"
+php composer.phar require --prefer-dist amintado/yii2-module-rbac-plus"*"
 ```
 
 or add
 
 ```
-"amintado/yii2-rbac-plus": "*"
+"amintado/yii2-module-rbac-plus": "*"
 ```
 
 to the require section of your `composer.json` file.
