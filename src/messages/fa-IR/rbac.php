@@ -2,74 +2,74 @@
 
 return [
     /* =========== Controller common  =============*/
-    'Create new {0}' => 'Tạo {0} mới',  
-    'Have been create new {0} success' => 'Đã tạo {0} mới thành công', 
-    'Update {0}' => 'Cập nhật {0}',  
-    'Have been update {0} success' => 'Đã cập nhật {0} thành công', 
-    'The requested page does not exist.'=>'Trang bạn yêu cầu hiện không tồn tại.',
+    'Create new {0}' => 'ایجاد {0} جدید',
+    'Have been create new {0} success' => '{0} جدید با موفقیت ساخته شد',
+    'Update {0}' => 'بروزرسانی {0}',
+    'Have been update {0} success' => 'بروزرسانی {0} با موفقیت انجام شد',
+    'The requested page does not exist.'=>'صفحه ی درخواستی شما وجود ندارد',
    
     /* =========== Views common  =============*/
     /* 1. GridView */
-    '* Resize table columns just like a spreadsheet by dragging the column edges.' => '* Thay đổi kích thước các cột trong bảng bằng cách kéo các cạnh cột.', // for toolbar buttons
-    'Reload Grid' => 'Tải lại bảng', // for toolbar buttons    
-    'All' => 'Tất cả', // for toolbar buttons
-    'Show all data' => 'Hiển thị tất cả dữ liệu', // for toolbar buttons
+    '* Resize table columns just like a spreadsheet by dragging the column edges.' => '* میتونید به راحتی اندازه ی ستون ها رو با کشیدن ماوس روی لبه ها تغییر دهید', // for toolbar buttons
+    'Reload Grid' => 'بازنشانی جدول', // for toolbar buttons
+    'All' => 'همه', // for toolbar buttons
+    'Show all data' => 'نمایش همه ی اطلاعات', // for toolbar buttons
     'Page' => 'Trang', // for toolbar buttons
-    'Show first page data' => 'Hiển thị dữ liệu theo trang', // for action buttons
-    'View'=>'Xem',
-    'Update' => 'Cập nhật', // for action buttons
-    'Delete' => 'Xóa', // for action buttons    
+    'Show first page data' => 'نمایش اطلاعات صفحه ی اول', // for action buttons
+    'View'=>'نمایش',
+    'Update' => 'بروزرسانی', // for action buttons
+    'Delete' => 'حذف', // for action buttons
     /*2. Modal*/
-    'Close'=>'Đóng',
-    'Save'=>'Lưu lại',
-    'Edit'=>'Sửa',
-    'Ok'=>'Đồng ý',
-    'Cancel'=>'Hủy',
-    'Create More'=>'Tạo thêm',
-    'Are you sure?'=>'Bạn có chắc chắn?',// for confirm delete
-    'Are you sure want to delete this item'=>'Bạn có thực sự chắc chắn rằng bạn muốn xóa mục này không?',// for confirm delete
-    '(not use)'=>'(không dùng)',
+    'Close'=>'بستن',
+    'Save'=>'ذخیره',
+    'Edit'=>'ویرایش',
+    'Ok'=>'فهمیدم',
+    'Cancel'=>'لغو',
+    'Create More'=>'ایجاد موارد بیشتر',
+    'Are you sure?'=>'برای این کار اطمینان دارید؟',// for confirm delete
+    'Are you sure want to delete this item'=>'آیا برای حذف این مورد اطمینان دارید؟',// for confirm delete
+    '(not use)'=>'(استفاده نشده)',
   
     /* =========== Auth Item Model  =============*/
-    'Name'=>'Tên',
-    'Description'=>'Mô tả',
-    'Rule Name'=>'Tên Rule',
-    'Data'=>'Data',
-    'Rule not exists'=>'Rule không tồn tại',
+    'Name'=>'نام',
+    'Description'=>'توضیحات',
+    'Rule Name'=>'نام نقش',
+    'Data'=>'اطلاعات',
+    'Rule not exists'=>'این نقش وجود ندارد',
     
     
        /* =========== Rule Manager  =============*/
     /* 1. Rule Model */
-    'Rule Name' => 'Tên Rule',// Rule Model
-    'Class Name'=>'Tên class',// Rule Model   
-    'Class "{className}" not exist'=>'Class "{className}" không tồn tại',
+    'Rule Name' => 'نام نقش',// Rule Model
+    'Class Name'=>'نام کلاس',// Rule Model
+    'Class "{className}" not exist'=>'کلاس "{className}" وجود ندارد',
     'Class "{className}" must extends yii\rbac\Rule'=>'Class "{className}" cần phải extends yii\rbac\Rule',
     'The "{className}::\$name" is not set'=>'Biến "{className}::\$name" chưa được khai báo hoặc nó bằng null',
     'The "{className}::\$name" is incorrect with the name of rule you have set'=>'Biến "{className}::\$name" không đúng với rule name mà bạn muốn tạo',
   
     
      /* 2. Rule Views */  
-    'Rules Manager' => 'Quản lý các rule', 
+    'Rules Manager' => 'مدیریت نقش ها',
        
     
     /* =========== Permisstion Manager  =============*/
     /* 1. Permisstion Model */
-    'Permission name'=>'Tên permistion',
+    'Permission name'=>'نام دسترسی',
     
     /* 2. Permisstion Views */  
-    'Permisstions Manager'=>'Quản lý các permission',
+    'Permisstions Manager'=>'مدیریت دسترسی ها',
     
     
     /* =========== Permisstion Manager  =============*/
     /* 1. Permisstion Model */
-    'Role name'=>'Tên role',
+    'Role name'=>'نام نقش',
     
     /* 2. Permisstion Views */  
-    'Roles Manager'=>'Quản lý các role',
+    'Roles Manager'=>'مدیریت نقش ها',
 
     /* =========== User role assignemnt  =============*/
     /* 1. Permisstion Views */      
-    'User Assignment'=>'Phân quyền người dùng',
-    'Assignment'=>'Phân quyền',
+    'User Assignment'=>'وظیفه کاربر',
+    'Assignment'=>'وظیفه',
 ];
 
