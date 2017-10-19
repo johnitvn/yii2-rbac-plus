@@ -14,7 +14,7 @@ Features
 + CRUD operations for roles, permissions and rules
 + Allows to assign multiple roles to user
 + Nice views to intergrate right away
-+ Integrated with [Yii2-user-plus](https://github.com/amintado/yii2-module-rbac) - flexible user management module
++ Integrated with [Yii2-user-plus](https://github.com/johnitvn/yii2-user-plus) - flexible user management module
 
 <img src="http://s17.postimg.org/8p7idb9jz/screencapture_fastandfurious_dev_apps_test_user.png" alt="Yii2 RBAC manager" width="640">
 
@@ -27,13 +27,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist amintado/yii2-module-rbac "*"
+php composer.phar require --prefer-dist johnitvn/yii2-rbac-plus "*"
 ```
 
 or add
 
 ```
-"amintado/yii2-module-rbac": "*"
+"johnitvn/yii2-rbac-plus": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -51,7 +51,7 @@ Usage
 ],
 'modules' => [
     'rbac' =>  [
-        'class' => 'amintado\rbacplus\Module'
+        'class' => 'johnitvn\rbacplus\Module'
     ]       
 ]
 ````
@@ -74,7 +74,7 @@ Ok. That's done. Avaiable route now:
 ````
 'modules' => [
     'rbac' =>  [
-        'class' => 'amintado\rbacplus\Module',
+        'class' => 'johnitvn\rbacplus\Module',
         'userModelClassName'=>null,
         'userModelIdField'=>'id',
         'userModelLoginField'=>'username',
