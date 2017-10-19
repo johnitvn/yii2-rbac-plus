@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model johnitvn\rbacplus\models\AuthItem */
+/* @var $model amintado\rbacplus\models\AuthItem */
 
 ?>
 <div class="auth-item-create">

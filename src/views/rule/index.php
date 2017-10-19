@@ -2,10 +2,10 @@
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
 use kartik\grid\GridView;
-use johnitvn\ajaxcrud\CrudAsset;
+use amintado\ajaxcrud\CrudAsset;
 
 /* @var $this yii\web\View */
-/* @var $searchModel johnitvn\rbacplus\models\AuthItemSearch */
+/* @var $searchModel amintado\rbacplus\models\AuthItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('rbac','Rules Manager');
