@@ -28,6 +28,6 @@
         }
     },
     "extra": {
-        "bootstrap": "johnitvn\\rbacplus\\Bootstrap"
+        "bootstrap": "amintado\\rbacplus\\Bootstrap"
     }
 }
