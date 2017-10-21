@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": ">=2.0.4",
-        "amintado/yii2-ajaxcrud": ">=2.0.0"
+        "amintado/yii2-ajaxcrud": "dev-master"
     },
     "autoload": {
         "psr-4": {
