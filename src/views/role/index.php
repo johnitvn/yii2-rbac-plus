@@ -14,6 +14,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
 ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+        	<div class="panel-body">
+                <?= Yii::t('rbac', 'A role represents a collection of permissions (e.g. creating posts, updating posts). A role may be assigned to one or multiple users. To check if a user has a specified permission, we may check if the user is assigned with a role that contains that permission.') ?>
+            </div>
+        </div>
+
+    </div>
+</div>
 <div class="auth-item-index">
     <div id="ajaxCrudDatatable">
 <?=
@@ -49,7 +59,7 @@ GridView::widget([
     'condensed' => true,
     'responsive' => true,
     'panel' => [
-        'type' => 'primary',
+        'type' => 'default',
         'heading' => '<i class="glyphicon glyphicon-list"></i> ' . $this->title,
         'before' => '<em>' . Yii::t('rbac', '* Resize table columns just like a spreadsheet by dragging the column edges.') . '</em>',
         'after' => false,
