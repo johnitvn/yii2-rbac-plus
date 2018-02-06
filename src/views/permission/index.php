@@ -8,7 +8,7 @@ use johnitvn\ajaxcrud\CrudAsset;
 /* @var $searchModel johnitvn\rbacplus\models\AuthItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('rbac','Permisstions Manager');
+$this->title = Yii::t('rbac','Permissions Manager');
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
