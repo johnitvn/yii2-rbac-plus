@@ -53,28 +53,26 @@ class Rule extends Model {
     public function rules() {
         return [
             [['name', 'className'], 'required'],
-            [['name'], 'unique', 'when' => function() {
-            return $this->isNewRecord || ($this->item->name != $this->name);
-        }],
+            ['name', 'string', 'max' => 64],
+            ['name', function() {
+                // Moved the unique method code previously declared in the class to this method
+                $authManager = Yii::$app->authManager;
+                $value = $this->name;
+                if ($authManager->getRule($value) !== null) {
+                    $message = Yii::t('yii', '{attribute} "{value}" has already been taken.');
+                    $params = [
+                        'attribute' => $this->getAttributeLabel('name'),
+                        'value' => $value,
+                    ];
+                    $this->addError('name', Yii::$app->getI18n()->format($message, $params, Yii::$app->language));
+                }
+            }, 'when' => function() {
+                return $this->isNewRecord || ($this->item->name != $this->name);
+            }],
+
             [['className'], 'string'],
             [['className'], 'classExists']
         ];
-    }
-
-    /**
-     * Check rule name is unique if not add error
-     */
-    public function unique() {
-        $authManager = Yii::$app->authManager;
-        $value = $this->name;
-        if ($authManager->getRule($value) !== null) {
-            $message = Yii::t('yii', '{attribute} "{value}" has already been taken.');
-            $params = [
-                'attribute' => $this->getAttributeLabel('name'),
-                'value' => $value,
-            ];
-            $this->addError('name', Yii::$app->getI18n()->format($message, $params, Yii::$app->language));
-        }
     }
 
     /**
