@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model johnitvn\rbacplus\models\AuthItem */
+/* @var $model amintado\rbacplus\models\AuthItem */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

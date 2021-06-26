@@ -1,6 +1,6 @@
 <?php
 
-namespace johnitvn\rbacplus;
+namespace amintado\rbacplus;
 
 use Yii;
 use yii\base\BootstrapInterface;

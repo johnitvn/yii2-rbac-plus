@@ -1,6 +1,6 @@
 <?php
 
-use johnitvn\rbacplus\models\Role;
+use amintado\rbacplus\models\Role;
 
 $permissions = Role::getPermistions($model->name);
 $first = '';

@@ -1,5 +1,5 @@
 {
-    "name": "johnitvn/yii2-rbac-plus",
+    "name": "amintado/yii2-module-rbac-plus",
     "description":"Database role base access control manager for yii2",
     "type": "yii2-extension",
     "license": "Apache-2.0",
@@ -20,14 +20,14 @@
     "minimum-stability": "dev",
     "require": {
         "yiisoft/yii2": ">=2.0.4",
-        "johnitvn/yii2-ajaxcrud": ">=2.0.0"
+        "amintado/yii2-ajaxcrud": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "johnitvn\\rbacplus\\": "src/"
+            "amintado\\rbacplus\\": "src/"
         }
     },
     "extra": {
-        "bootstrap": "johnitvn\\rbacplus\\Bootstrap"
+        "bootstrap": "amintado\\rbacplus\\Bootstrap"
     }
 }

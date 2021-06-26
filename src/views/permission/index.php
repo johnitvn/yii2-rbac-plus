@@ -2,10 +2,10 @@
 use yii\helpers\Html;
 use yii\bootstrap\Modal;
 use kartik\grid\GridView;
-use johnitvn\ajaxcrud\CrudAsset;
+use amintado\ajaxcrud\CrudAsset;
 
 /* @var $this yii\web\View */
-/* @var $searchModel johnitvn\rbacplus\models\AuthItemSearch */
+/* @var $searchModel amintado\rbacplus\models\AuthItemSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('rbac','Permissions Manager');
@@ -14,6 +14,15 @@ $this->params['breadcrumbs'][] = $this->title;
 CrudAsset::register($this);
 
 ?>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+        	<div class="panel-body">
+        	   <?= Yii::t('rbac', 'Both roles and permissions can be organized in a hierarchy. In particular, a role may consist of other roles or permissions; and a permission may consist of other permissions. Yii implements a partial order hierarchy which includes the more special tree hierarchy. While a role can contain a permission, it is not true vice versa.') ?> 
+        	</div>
+        </div>
+    </div>
+</div>
 <div class="auth-item-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
