@@ -12,6 +12,7 @@ use yii\rbac\Item;
 class Role extends AuthItem {
 
     public $permissions = [];
+    public $roles = [];
 
     public function init() {
         parent::init();
@@ -21,12 +22,19 @@ class Role extends AuthItem {
                 $permissions[] = $permission->name;
             }
             $this->permissions = $permissions;
+
+            $roles = [];
+            foreach (static::getRoles($this->item->name) as $role) {
+                $roles[] = $role->name;
+            }
+            $this->roles = $roles;
         }
     }
 
     public function scenarios() {
         $scenarios = parent::scenarios();
         $scenarios['default'][] = 'permissions';
+        $scenarios['default'][] = 'roles';
         return $scenarios;
     }
 
@@ -34,7 +42,7 @@ class Role extends AuthItem {
         return Item::TYPE_ROLE;
     }
 
-    public function afterSave($insert,$changedAttributes) {
+    public function afterSave($insert, $changedAttributes) {
         $authManager = Yii::$app->authManager;
         $role = $authManager->getRole($this->item->name);
         if (!$insert) {
@@ -64,6 +72,17 @@ class Role extends AuthItem {
     public static function getPermistions($name) {
         $authManager = Yii::$app->authManager;
         return $authManager->getPermissionsByRole($name);
+    }
+
+    public static function getRoles($name) {
+        $authManager = Yii::$app->authManager;
+        $children = $authManager->getChildren($name);
+        foreach ($children as $child) {
+            if ($child->type == 2) {
+                unset($children[$child->name]);
+            }
+        }
+        return $children;
     }
 
 }
